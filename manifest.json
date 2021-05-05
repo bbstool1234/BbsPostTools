@@ -1,0 +1,41 @@
+{
+    "manifest_version": 2,
+    "name": "BBS Filter",
+    "version": "0.1",
+    "incognito": "split",
+    "permissions": [
+        "storage",
+        "contextMenus"
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://pincong.rocks/*"
+            ],
+            "run_at": "document_start",
+            "css": [
+                "styles.css"
+            ],
+            "js": [
+                "jquery-3.4.1.min.js",
+                "content.js"
+            ]
+        }
+    ],
+    "icons": {
+        "16": "icon.png",
+        "48": "icon.png",
+        "128": "icon.png"
+    },
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_popup": "popup.html"
+    },
+    "web_accessible_resources": [
+    ]
+}
